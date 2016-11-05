@@ -17,24 +17,17 @@
         <meta name="twitter:description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
 
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+
         <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
-        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
-        <link rel="icon" href="/images/logo.png" type="image/x-icon">
-        <script>
-            window.PAGE_TYPE = "guide"
-        </script>
-        <link rel="stylesheet" href="/css/page.css">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46852172-1', 'cn.vuejs.org');
-  ga('send', 'pageview');
-</script>
+        <!-- main page styles -->
+        <link rel="stylesheet" href="/css/page.css">
+
+        <!-- this needs to be loaded before guide's inline scripts -->
         <script src="/js/vue.js"></script>
+        <script>window.PAGE_TYPE = "guide"</script>
     </head>
     <body class="docs">        <div id="mobile-bar" >
             <a class="menu-button"></a>
@@ -408,10 +401,10 @@
 <h2 id="独立版本"><a href="#独立版本" class="headerlink" title="独立版本"></a>独立版本</h2><p>直接下载并用 <code>&lt;script&gt;</code> 标签引入，<code>Vue</code> 会被注册为一个全局变量。<strong>重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</strong></p>
 <p class="tip">开发环境不要用最小压缩版，不然就失去了错误提示和警告!</p>
 
-<div id="downloads"><br><a class="button" href="http://vuejs.org/js/vue.js" download="" target="_blank" rel="external">开发版本</a><span class="light info">包含完整的警告和调试模式</span><br><br><a class="button" href="http://vuejs.org/js/vue.min.js" download="" target="_blank" rel="external">生产版本</a><span class="light info">删除了警告，23.56kb min+gzip</span><br></div>
+<div id="downloads"><br><a class="button" href="http://vuejs.org/js/vue.js" download="" target="_blank" rel="external">开发版本</a><span class="light info">包含完整的警告和调试模式</span><br><br><a class="button" href="http://vuejs.org/js/vue.min.js" download="" target="_blank" rel="external">生产版本</a><span class="light info">删除了警告，23.55kb min+gzip</span><br></div>
 
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>推荐：<a href="https://unpkg.com/vue/dist/vue.js" target="_blank" rel="external">unpkg</a>, 会保持和 npm 发布的最新的版本一致。可以在 <a href="https://unpkg.com/vue/" target="_blank" rel="external">unpkg.com/vue/</a> 浏览 npm 包资源。</p>
-<p>也可以从 <a href="//cdn.jsdelivr.net/vue/2.0.4/vue.js">jsdelivr</a> 或 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.4/vue.js">cdnjs</a> 获取，不过这两个服务版本更新可能略滞后。</p>
+<p>也可以从 <a href="//cdn.jsdelivr.net/vue/2.0.5/vue.js">jsdelivr</a> 或 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.js">cdnjs</a> 获取，不过这两个服务版本更新可能略滞后。</p>
 <h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>在用 Vue.js 构建大型应用时推荐使用 NPM 安装， NPM 能很好地和诸如 <a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a> 或 <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a> 模块打包器配合使用。 Vue.js 也提供配套工具来开发<a href="single-file-components.html">单文件组件</a>。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 最新稳定版</span></div><div class="line">$ npm install vue</div></pre></td></tr></table></figure>
 <h3 id="独立构建-vs-运行时构建"><a href="#独立构建-vs-运行时构建" class="headerlink" title="独立构建 vs 运行时构建"></a>独立构建 vs 运行时构建</h3><p>有两种构建方式，独立构建和运行构建。它们的区别在于前者包含<strong>模板编译器</strong>而后者不包含。</p>
@@ -419,7 +412,7 @@
 <ul>
 <li><p>独立构建包含模板编译器并支持 <code>template</code> 选项。 <strong>它也依赖于浏览器的接口的存在，所以你不能使用它来为服务器端渲染。</strong></p>
 </li>
-<li><p>运行时构建不包含模板编译器，因此不支持 <code>template</code> 选项，只能用 <code>render</code> 选项，但即使使用运行时构建，在单文件组件中也依然可以写模板，因为单文件组件的模板会在构建时预编译为 <code>render</code> 函数。运行时构建比独立构建要轻量30%，只有  undefined Kb min+gzip大小。</p>
+<li><p>运行时构建不包含模板编译器，因此不支持 <code>template</code> 选项，只能用 <code>render</code> 选项，但即使使用运行时构建，在单文件组件中也依然可以写模板，因为单文件组件的模板会在构建时预编译为 <code>render</code> 函数。运行时构建比独立构建要轻量30%，只有  16.39 Kb min+gzip大小。</p>
 </li>
 </ul>
 <p>默认 NPM 包导出的是 <strong>运行时</strong> 构建。为了使用独立构建，在 webpack 配置中添加下面的别名：</p>
@@ -455,7 +448,7 @@
     
     <div class="footer">
       发现错误或想贡献文档？
-      <a href="https://github.com/vuejs/cn.vuejs.org/tree/2.0/src/guide/installation.md" target="_blank">
+      <a href="https://github.com/vuejs/cn.vuejs.org/tree/master/src/guide/installation.md" target="_blank">
         在 Github 编辑此页!
       </a>
     </div>
@@ -463,16 +456,48 @@
 
                 
             </div>
-            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
             <script src="/js/smooth-scroll.min.js"></script>
-            <script src="/js/common.js"></script>
         
 
+        <!-- main custom script for sidebars, version selects etc. -->
+        <script src="/js/common.js"></script>
+
+        <!-- ga -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46852172-1', 'cn.vuejs.org');
+          ga('send', 'pageview');
+        </script>
+
+        <!-- search -->
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/search.css">
+        <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+        <script>
+        [
+          '#search-query-nav',
+          '#search-query-sidebar'
+        ].forEach(function (selector) {
+          if (!document.querySelector(selector)) return
+          docsearch({
+            appId: 'BH4D9OD16A',
+            apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+            indexName: 'vuejs',
+            inputSelector: selector
+          })
+        })
+        </script>
+
+        <!-- fastclick -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                FastClick.attach(document.body);
-            }, false);
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body)
+        }, false)
         </script>
     </body>
 </html>
