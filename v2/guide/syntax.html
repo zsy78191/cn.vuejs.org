@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>模板语法 - vue.js</title>
+        <title>模板语法 - Vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
         <meta property="og:type" content="article">
         <meta property="og:title" content="模板语法 - vue.js">
         <meta property="og:description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
@@ -19,8 +18,7 @@
 
         <link rel="icon" href="/images/logo.png" type="image/x-icon">
 
-        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+        <!-- <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'> -->
 
         <!-- main page styles -->
         <link rel="stylesheet" href="/css/page.css">
@@ -44,11 +42,10 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">指南</a></li>
+<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
 <li><a href="/v2/api/" class="nav-link">API</a></li>
 <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-<li><a href="/about/" class="nav-link">贡献者</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">博客</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -60,6 +57,43 @@
   </ul>
 </li>
 
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">生态系统</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>帮助</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">模板</a></li>
+    </ul></li>
+    <li><h4>信息</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">博客</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">工作</a></li>
+    </ul></li>
+    <li><h4>核心插件</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>资源列表</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">官方仓库</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Vue 资源</a></li>
+    </ul></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container language">
+  <a class="nav-link">多语言</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://vuejs.org/" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://jp.vuejs.org/" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/" class="nav-link" target="_blank">한국어</a></li>
+  </ul>
+</li>
 
   </ul>
 </div>
@@ -75,11 +109,10 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">指南</a></li>
+<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
 <li><a href="/v2/api/" class="nav-link">API</a></li>
 <li><a href="/v2/examples/" class="nav-link">示例</a></li>
-<li><a href="/about/" class="nav-link">贡献者</a></li>
-<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">博客</a></li>
+<li><a href="/about/" class="nav-link">参与贡献</a></li>
 <li class="nav-dropdown-container">
   <a class="nav-link">社区</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -91,29 +124,76 @@
   </ul>
 </li>
 
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">生态系统</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>帮助</h4></li>
+    <li><ul>
+      <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+      <li><a href="https://github.com/vuejs-templates" class="nav-link" target="_blank">模板</a></li>
+    </ul></li>
+    <li><h4>信息</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">博客</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">工作</a></li>
+    </ul></li>
+    <li><h4>核心插件</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+    </ul></li>
+    <li><h4>资源列表</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">官方仓库</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Vue 资源</a></li>
+    </ul></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container language">
+  <a class="nav-link">多语言</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://vuejs.org/" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://jp.vuejs.org/" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/" class="nav-link" target="_blank">한국어</a></li>
+  </ul>
+</li>
 
     </ul>
     <div class="list">
-        <div id="donate" style="margin-bottom: 20px">
-            <img src="/images/patreon.png">
-            <a href="/support-vuejs">支持 Vue.js</a>
+        <div class="main-sponsor">
+            <span>赞助者</span><br>
+            <a href="http://www.thedifferenceengine.io/" target="_blank"
+                style="background-color: #f3f3f3; padding: 10px 0">
+                <img src="/images/tde.png">
+            </a>
         </div>
+        <a class="become-backer" href="/support-vuejs">
+            成为赞助者
+        </a>
         <h2>
-            Guide
-            <select class="version-select">
-                <option value="SELF" selected>2.0</option>
-                <option value="v1">1.0</option>
-                <option value="012">0.12</option>
-                <option value="011">0.11</option>
-            </select>
+            
+            
+                <select class="version-select">
+                    <option value="SELF" selected>2.0</option>
+                    <option value="v1">1.0</option>
+                </select>
+            
         </h2>
         <ul class="menu-root">
             
                 
+
                 
-                  <li><h3>基础</h3></li>
-                
-                
+                    
+                      <li><h3>基础</h3></li>
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -121,8 +201,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -130,8 +214,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -139,8 +227,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -148,8 +240,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -157,8 +253,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -166,8 +266,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -175,8 +279,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -184,8 +292,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -193,8 +305,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -202,8 +318,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -211,10 +331,14 @@
                 </li>
             
                 
+
                 
-                
-                  <li><h3>进阶</h3></li>
-                
+                    
+                    
+                      <li><h3>进阶</h3></li>
+                    
+                    
+                    
                 
                 
                 <li>
@@ -222,8 +346,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -231,8 +359,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -240,8 +372,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -249,8 +385,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -258,8 +398,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -267,8 +411,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -276,8 +424,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -285,8 +437,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -294,8 +450,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -303,8 +463,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -312,8 +476,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -321,8 +489,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -330,10 +502,14 @@
                 </li>
             
                 
+
                 
-                
-                
-                  <li><h3>迁移</h3></li>
+                    
+                    
+                    
+                      <li><h3>迁移</h3></li>
+                    
+                    
                 
                 
                 <li>
@@ -341,8 +517,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -350,8 +530,12 @@
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
@@ -359,24 +543,33 @@
                 </li>
             
                 
+
                 
+                    
+                    
+                    
+                    
+                      <li><h3>更多</h3></li>
+                    
                 
-                
-                
-                  <li><h3>更多</h3></li>
                 
                 <li>
                     <a href="/v2/guide/comparison.html" class="sidebar-link">对比其他框架</a>
                 </li>
             
                 
+
                 
-                
+                    
+                    
+                    
+                    
                 
                 
                 <li>
                     <a href="/v2/guide/join.html" class="sidebar-link">加入Vue.js社区</a>
                 </li>
+            
             
         </ul>
     </div>
@@ -384,17 +577,6 @@
 
 
 <div class="content guide with-sidebar syntax-guide">
-    
-      <div id="ad">
-  <span>Sponsored By</span><br>
-  <a href="http://www.thedifferenceengine.io/" target="_blank"
-    style="background-color: rgba(0,0,0,.85); padding: 10px 0">
-    <img src="/images/tde.png">
-  </a>
-  <!-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script> -->
-</div>
-
-    
     
       <h1>模板语法</h1>
     
@@ -422,17 +604,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 这是语句，不是表达式 --&gt;</span></div><div class="line">&#123;&#123; var a = 1 &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;</span></div><div class="line">&#123;&#123; if (ok) &#123; return message &#125; &#125;&#125;</div></pre></td></tr></table></figure>
 <p class="tip">模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 <code>Math</code> 和 <code>Date</code> 。你不应该在模板表达式中试图访问用户定义的全局变量。</p>
 
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。过滤器应该被添加在 <strong>mustache 插值</strong>的尾部，由“管道符”指示：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div></pre></td></tr></table></figure>
-<p class="tip">Vue 2.x 中，过滤器只能在 mustache 绑定中使用。为了在指令绑定中实现同样的行为，你应该使用<a href="computed.html">计算属性</a>。</p>
 
-<p>过滤器函数总接受表达式的值作为第一个参数。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>过滤器可以串联：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
-<p>过滤器是 JavaScript 函数，因此可以接受参数：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA('arg1', arg2) &#125;&#125;</div></pre></td></tr></table></figure>
-<p>这里，字符串 <code>&#39;arg1&#39;</code> 将传给过滤器作为第二个参数， <code>arg2</code> 表达式的值将被求值然后传给过滤器作为第三个参数。</p>
 <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>指令（Directives）是带有 <code>v-</code> 前缀的特殊属性。指令属性的值预期是<strong>单一 JavaScript 表达式</strong>（除了 <code>v-for</code>，之后再讨论）。指令的职责就是当其表达式的值改变时相应地将某些行为应用到 DOM 上。让我们回顾一下在介绍里的例子：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>Now you see me<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这里， <code>v-if</code> 指令将根据表达式 <code>seen</code> 的值的真假来移除/插入 <code>&lt;p&gt;</code> 元素。</p>
@@ -442,9 +614,20 @@
 <p>另一个例子是 <code>v-on</code> 指令，它用于监听 DOM 事件：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">"doSomething"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在这里参数是监听的事件名。我们也会更详细地讨论事件处理。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符（Modifiers）是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指定应该以特殊方式绑定。例如，<code>.prevent</code> 修饰符告诉 <code>v-on</code> 指令对于触发的事件调用 <code>event.preventDefault()</code>：</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符（Modifiers）是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，<code>.prevent</code> 修饰符告诉 <code>v-on</code> 指令对于触发的事件调用 <code>event.preventDefault()</code>：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>之后当我们更深入地了解 <code>v-on</code> 与 <code>v-model</code>时，会看到更多修饰符的使用。</p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：<strong>mustache 插值和 <code>v-bind</code> 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- in mustaches --&gt;</span></div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- in v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p class="tip">Vue 2.x 中，过滤器只能在 mustache 绑定和 <code>v-bind</code> 表达式（从 2.1.0 开始支持）中使用，因为过滤器设计目的就是用于文本转换。为了在其他指令中实现更复杂的数据变换，你应该使用<a href="computed.html">计算属性</a>。</p>
+
+<p>过滤器函数总接受表达式的值作为第一个参数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>过滤器可以串联：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
+<p>过滤器是 JavaScript 函数，因此可以接受参数：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA('arg1', arg2) &#125;&#125;</div></pre></td></tr></table></figure>
+<p>这里，字符串 <code>&#39;arg1&#39;</code> 将传给过滤器作为第二个参数， <code>arg2</code> 表达式的值将被求值然后传给过滤器作为第三个参数。</p>
 <h2 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h2><p><code>v-</code> 前缀在模板中是作为一个标示 Vue 特殊属性的明显标识。当你使用 Vue.js 为现有的标记添加动态行为时，它会很有用，但对于一些经常使用的指令来说有点繁琐。同时，当搭建 Vue.js 管理所有模板的 <a href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="external">SPA</a> 时，<code>v-</code> 前缀也变得没那么重要了。因此，Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
 <h3 id="v-bind-缩写"><a href="#v-bind-缩写" class="headerlink" title="v-bind 缩写"></a><code>v-bind</code> 缩写</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"url"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">"url"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="v-on-缩写"><a href="#v-on-缩写" class="headerlink" title="v-on 缩写"></a><code>v-on</code> 缩写</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">"doSomething"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">"doSomething"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -466,9 +649,9 @@
       </div>
     
     <div class="footer">
-      发现错误或想贡献文档？
-      <a href="https://github.com/vuejs/cn.vuejs.org/tree/master/src/v2/guide/syntax.md" target="_blank">
-        在 Github 编辑此页!
+      发现错误？想参与编辑？
+      <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/syntax.md" target="_blank">
+        在 Github 上编辑此页！
       </a>
     </div>
 </div>
@@ -502,11 +685,15 @@
           '#search-query-sidebar'
         ].forEach(function (selector) {
           if (!document.querySelector(selector)) return
+          // search index defaults to v2
+          var match = window.location.pathname.match(/^\/(v\d+)/)
+          var version = match ? match[1] : 'v2'
           docsearch({
             appId: 'BH4D9OD16A',
             apiKey: '5638280abff9d207417bb03be05f0b25',
             indexName: 'vuejs_cn2',
-            inputSelector: selector
+            inputSelector: selector,
+            algoliaOptions: { facetFilters: ["version:" + version] }
           })
         })
         </script>

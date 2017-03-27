@@ -60,13 +60,13 @@
     function levenshteinDistance(a, b) {
       var m = []
       if (!(a && b)) return (b || a).length
-      for (let i = 0; i <= b.length; m[i] = [i++]) {}
-      for (let j = 0; j <= a.length; m[0][j] = j++) {}
-      for (let i = 1; i <= b.length; i++) {
-        for (let j = 1; j <= a.length; j++) {
-          m[i][j] = b.charAt(i - 1) === a.charAt(j - 1) ?
-            m[i - 1][j - 1] :
-            m[i][j] = Math.min(
+      for (var i = 0; i <= b.length; m[i] = [i++]) {}
+      for (var j = 0; j <= a.length; m[0][j] = j++) {}
+      for (var i = 1; i <= b.length; i++) {
+        for (var j = 1; j <= a.length; j++) {
+          m[i][j] = b.charAt(i - 1) === a.charAt(j - 1)
+            ? m[i - 1][j - 1]
+            : m[i][j] = Math.min(
               m[i - 1][j - 1] + 1,
               Math.min(m[i][j - 1] + 1, m[i - 1][j] + 1))
         }
@@ -101,15 +101,16 @@
 
   function initVersionSelect() {
     // version select
-    document.querySelector('.version-select').addEventListener('change', function(e) {
+    var versionSelect = document.querySelector('.version-select')
+    versionSelect && versionSelect.addEventListener('change', function (e) {
       var version = e.target.value
       var section = window.location.pathname.match(/\/v\d\/(\w+?)\//)[1]
       if (version === 'SELF') return
       window.location.assign(
         'http://' +
         version +
-        (version && '.') +
-        'vuejs.org/' + section + '/'
+        (version && '-') +
+        'cn.vuejs.org/' + section + '/'
       )
     })
   }
@@ -159,7 +160,6 @@
 
       var animating = false
       sectionContainer.addEventListener('click', function(e) {
-        e.preventDefault()
         if (e.target.classList.contains('section-link')) {
           sidebar.classList.remove('open')
           setActive(e.target)
@@ -214,12 +214,21 @@
       var text = h.textContent.replace(/\(.*\)$/, '')
       link.innerHTML =
         '<a class="section-link" data-scroll href="#' + h.id + '">' +
-        text +
+          htmlEscape(text) +
         '</a>'
       return link
     }
 
-    function collectH3s(h) {
+    function htmlEscape (text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+    }
+
+    function collectH3s (h) {
       var h3s = []
       var next = h.nextSibling
       while (next && next.tagName !== 'H2') {
