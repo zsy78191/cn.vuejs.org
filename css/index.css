@@ -689,10 +689,12 @@ body {
 }
 #sponsors img {
   transition: all 0.3s ease;
-  filter: contrast(0%);
+  filter: grayscale(100%);
+  opacity: 0.66;
 }
 #sponsors img:hover {
   filter: none;
+  opacity: 1;
 }
 #sponsors a.vip {
   display: block;

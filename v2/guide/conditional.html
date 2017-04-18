@@ -166,9 +166,9 @@
     <div class="list">
         <div class="main-sponsor">
             <span>赞助者</span><br>
-            <a href="http://www.thedifferenceengine.io/" target="_blank"
-                style="background-color: #f3f3f3; padding: 10px 0">
-                <img src="/images/tde.png">
+            <a href="https://www.upyun.com/?utm_source=vue&utm_medium=ad&utm_content=con
+" target="_blank">
+                <img src="/images/upyun-main.jpg">
             </a>
         </div>
         <a class="become-backer" href="/support-vuejs">
@@ -597,7 +597,7 @@
 </blockquote>
 <p><code>v-else-if</code>，顾名思义，充当 <code>v-if</code> 的“else-if 块”。可以链式地使用多次：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"type === 'A'"</span>&gt;</span></div><div class="line">  A</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'B'"</span>&gt;</span></div><div class="line">  B</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'C'"</span>&gt;</span></div><div class="line">  C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Not A/B/C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>类似于 <code>v-else</code>,，<code>v-else-if</code> 必须紧跟在 <code>v-if</code> 或者 <code>v-else-if</code> 元素之后。</p>
+<p>类似于 <code>v-else</code>，<code>v-else-if</code> 必须紧跟在 <code>v-if</code> 或者 <code>v-else-if</code> 元素之后。</p>
 <h3 id="用-key-管理可复用的元素"><a href="#用-key-管理可复用的元素" class="headerlink" title="用 key 管理可复用的元素"></a>用 <code>key</code> 管理可复用的元素</h3><p>Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做，除了使 Vue 变得非常快之外，还有一些有用的好处。例如，如果你允许用户在不同的登录方式之间切换:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>那么在上面的代码中切换 <code>loginType</code> 将不会清除用户已经输入的内容。因为两个模版使用了相同的元素，<code>&lt;input&gt;</code> 不会被替换掉——仅仅是替换了它的的 <code>placeholder</code>。</p>
@@ -673,7 +673,7 @@ new Vue({
 <p>相比之下， <code>v-show</code> 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
 <p>一般来说， <code>v-if</code> 有更高的切换开销，而 <code>v-show</code> 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 <code>v-show</code> 较好；如果在运行时条件不太可能改变，则使用 <code>v-if</code> 较好。</p>
 <h2 id="v-if-与-v-for-一起使用"><a href="#v-if-与-v-for-一起使用" class="headerlink" title="v-if 与 v-for 一起使用"></a>v-if 与 v-for 一起使用</h2><p>当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。</p>
-<p>请查阅 <a href="http://vuejs.org/v2/guide/list.html#v-for-with-v-if" target="_blank" rel="external">列表渲染指南</a> 以获取详细信息。</p>
+<p>请查阅 <a href="../guide/list.html#v-for-with-v-if">列表渲染指南</a> 以获取详细信息。</p>
 
     
       <div class="guide-links">
