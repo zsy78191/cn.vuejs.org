@@ -684,6 +684,9 @@
 <p>更多关于 JSX 映射到 JavaScript，阅读 <a href="https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage" target="_blank" rel="external">使用文档</a>。</p>
 <h2 id="函数化组件"><a href="#函数化组件" class="headerlink" title="函数化组件"></a>函数化组件</h2><p>之前创建的锚点标题组件是比较简单，没有管理或者监听任何传递给他的状态，也没有生命周期方法。它只是一个接收参数的函数。<br>在这个例子中，我们标记组件为 <code>functional</code>， 这意味它是无状态（没有 <code>data</code>），无实例（没有 <code>this</code> 上下文）。<br>一个 <strong>函数化组件</strong> 就像这样：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">functional</span>: <span class="literal">true</span>,</div><div class="line">  <span class="comment">// 为了弥补缺少的实例</span></div><div class="line">  <span class="comment">// 提供第二个参数作为上下文</span></div><div class="line">  render: <span class="function"><span class="keyword">function</span> (<span class="params">createElement, context</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// Props 可选</span></div><div class="line">  props: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：在 &lt;2.3.0 的版本中，如果一个函数式组件想要接受 props，则 <code>props</code> 选项是必须的。在 2.3.0 或以上的版本中，你可以省略 <code>props</code> 选项，所有组件上的属性都会被自动解析为 props。</p>
+</blockquote>
 <p>组件需要的一切都是通过上下文传递，包括：</p>
 <ul>
 <li><code>props</code>: 提供props 的对象</li>
@@ -691,6 +694,8 @@
 <li><code>slots</code>: slots 对象</li>
 <li><code>data</code>: 传递给组件的 data 对象</li>
 <li><code>parent</code>: 对父组件的引用</li>
+<li><code>listeners</code>: (2.3.0+) 一个包含了组件上所注册的 <code>v-on</code> 侦听器的对象。这只是一个指向 <code>data.on</code> 的别名。</li>
+<li><code>injections</code>: (2.3.0+) 如果使用了 <a href="https://vuejs.org/v2/api/#provide-inject" target="_blank" rel="external"><code>inject</code></a> 选项, 则该对象包含了应当被注入的属性。</li>
 </ul>
 <p>在添加 <code>functional: true</code> 之后，锚点标题组件的 render 函数之间简单更新增加 <code>context</code> 参数，<code>this.$slots.default</code> 更新为 <code>context.children</code>，之后<code>this.level</code> 更新为 <code>context.props.level</code>。</p>
 <p>因为函数化组件只是一个函数，所以渲染开销也低很多。在作为包装组件时它们也同样非常有用，比如，当你需要做这些时：</p>

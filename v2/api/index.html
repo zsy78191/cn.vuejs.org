@@ -528,7 +528,7 @@
 
 <p class="tip">如果 <code>render</code> 函数和 <code>template</code> 属性都不存在，挂载 DOM 元素的 HTML 会被提取出来用作模板，此时，必须使用 Runtime + Compiler 构建的 Vue 库。</p>
 </li>
-<li><p><strong>参考：</strong> </p>
+<li><p><strong>参考：</strong></p>
 <ul>
 <li><a href="../guide/instance.html#生命周期图示">生命周期图示</a></li>
 <li><a href="../guide/installation.html#独立构建-vs-运行时构建">独立构建-vs-运行时构建</a></li>
@@ -1217,6 +1217,7 @@
 <li><code>.left</code> - (2.2.0) 只当点击鼠标左键时触发。</li>
 <li><code>.right</code> - (2.2.0) 只当点击鼠标右键时触发。</li>
 <li><code>.middle</code> - (2.2.0) 只当点击鼠标中键时触发。</li>
+<li><code>.passive</code> - (2.3.0) 以 <code>{ passive: true }</code> 模式添加侦听器</li>
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
@@ -1246,7 +1247,8 @@
 <li><p><strong>修饰符：</strong></p>
 <ul>
 <li><code>.prop</code> - 被用于绑定 DOM 属性。(<a href="http://stackoverflow.com/questions/6003819/properties-and-attributes-in-html#answer-6004028" target="_blank" rel="external">what’s the difference?</a>)</li>
-<li><code>.camel</code> - transform the kebab-case attribute name into camelCase. (supported since 2.1.0)</li>
+<li><code>.camel</code> - (2.1.0+) transform the kebab-case attribute name into camelCase. (supported since 2.1.0)</li>
+<li><code>.sync</code> (2.3.0+) 语法糖，会扩展成一个更新父组件绑定值的 <code>v-on</code> 侦听器。</li>
 </ul>
 </li>
 <li><p><strong>用法：</strong></p>
@@ -1265,6 +1267,7 @@
 <ul>
 <li><a href="../guide/class-and-style.html">Class 与 Style 绑定</a></li>
 <li><a href="../guide/components.html#Props">组件 - 组件 Props</a></li>
+<li><a href="../guide/components.html#sync-修饰符">组件 - <code>.sync</code> 修饰符</a></li>
 </ul>
 </li>
 </ul>

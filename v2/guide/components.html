@@ -812,6 +812,18 @@ new Vue({
 <p>在本例中，子组件已经和它外部完全解耦了。它所做的只是报告自己的内部事件，至于父组件是否关心则与它无关。留意到这一点很重要。</p>
 <h4 id="给组件绑定原生事件"><a href="#给组件绑定原生事件" class="headerlink" title="给组件绑定原生事件"></a>给组件绑定原生事件</h4><p>有时候，你可能想在某个组件的根元素上监听一个原生事件。可以使用 <code>.native</code> 修饰 <code>v-on</code> 。例如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-on:click.native</span>=<span class="string">"doTheThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="sync-修饰符"><a href="#sync-修饰符" class="headerlink" title=".sync 修饰符"></a><code>.sync</code> 修饰符</h3><blockquote>
+<p>2.3.0+</p>
+</blockquote>
+<p>在一些情况下，我们可能会需要对一个 prop 进行『双向绑定』。事实上，这正是 Vue 1.x 中的 <code>.sync</code>修饰符所提供的功能。当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定的值。这很方便，但也会导致问题，因为它破坏了『单向数据流』的假设。由于子组件改变 prop 的代码和普通的状态改动代码毫无区别，当光看子组件的代码时，你完全不知道它何时悄悄地改变了父组件的状态。这在 debug 复杂结构的应用时会带来很高的维护成本。</p>
+<p>上面所说的正是我们在 2.0 中移除 <code>.sync</code> 的理由。但是在 2.0 发布之后的实际应用中，我们发现 <code>.sync</code> 还是有其适用之处，比如在开发可复用的组件库时。我们需要做的只是<strong>让子组件改变父组件状态的代码更容易被区分</strong>。</p>
+<p>在 2.3 我们重新引入了 <code>.sync</code> 修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 <code>v-on</code> 侦听器。</p>
+<p>如下代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">:foo.sync</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>会被扩展为：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">:foo</span>=<span class="string">"bar"</span> @<span class="attr">update:foo</span>=<span class="string">"val =&gt; bar = val"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>当子组件需要更新 <code>foo</code> 的值时，它需要显式地触发一个更新事件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">this</span>.$emit(<span class="string">'update:foo'</span>, newValue)</div></pre></td></tr></table></figure>
 <h3 id="使用自定义事件的表单输入组件"><a href="#使用自定义事件的表单输入组件" class="headerlink" title="使用自定义事件的表单输入组件"></a>使用自定义事件的表单输入组件</h3><p>自定义事件可以用来创建自定义的表单输入组件，使用 <code>v-model</code> 来进行数据双向绑定。看看这个：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"something"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这不过是以下示例的语法糖：</p>
@@ -957,6 +969,12 @@ new Vue({
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(</div><div class="line">  <span class="string">'async-webpack-example'</span>,</div><div class="line">  () =&gt; <span class="keyword">import</span>(<span class="string">'./my-async-component'</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
 <p class="tip">如果你是 <strong>Browserify</strong> 用户,可能就无法使用异步组件了,它的作者已经<a href="https://github.com/substack/node-browserify/issues/58#issuecomment-21978224" target="_blank" rel="external">表明</a> Browserify 是不支持异步加载的。Browserify 社区发现 <a href="https://github.com/vuejs/vuejs.org/issues/620" target="_blank" rel="external">一些解决方法</a>，可能有助于已存在的复杂应用。对于其他场景，我们推荐简单实用 Webpack 构建，一流的异步支持</p>
 
+<h3 id="高级异步组件"><a href="#高级异步组件" class="headerlink" title="高级异步组件"></a>高级异步组件</h3><blockquote>
+<p>New in 2.3.0</p>
+</blockquote>
+<p>自 2.3 起，异步组件的工厂函数也可以返回一个如下的对象：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> AsyncComp = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</div><div class="line">  <span class="comment">// 需要加载的组件. 应当是一个 Promise</span></div><div class="line">  component: <span class="keyword">import</span>(<span class="string">'./MyComp.vue'</span>),</div><div class="line">  <span class="comment">// loading 时应当渲染的组件</span></div><div class="line">  loading: LoadingComp,</div><div class="line">  <span class="comment">// 出错时渲染的组件</span></div><div class="line">  error: ErrorComp,</div><div class="line">  <span class="comment">// 渲染 loading 组件前的等待时间。默认：200ms.</span></div><div class="line">  delay: <span class="number">200</span>,</div><div class="line">  <span class="comment">// 最长等待时间。超出此时间则渲染 error 组件。默认：Infinity</span></div><div class="line">  timeout: <span class="number">3000</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>注意，当一个异步组件被作为 <code>vue-router</code> 的路由组件使用时，这些高级选项都是无效的，因为在路由切换前就会提前加载所需要的异步组件。另外，如果你要在路由组件中上述写法，需要使用 <code>vue-router</code> 2.4.0+。</p>
 <h3 id="组件命名约定"><a href="#组件命名约定" class="headerlink" title="组件命名约定"></a>组件命名约定</h3><p>当注册组件（或者 props）时，可以使用 kebab-case ，camelCase ，或 TitleCase 。Vue 不关心这个。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在组件定义中</span></div><div class="line">components: &#123;</div><div class="line">  <span class="comment">// 使用 kebab-case 形式注册</span></div><div class="line">  <span class="string">'kebab-cased-component'</span>: &#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">  <span class="comment">// register using camelCase</span></div><div class="line">  <span class="string">'camelCasedComponent'</span>: &#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">  <span class="comment">// register using TitleCase</span></div><div class="line">  <span class="string">'TitleCasedComponent'</span>: &#123; <span class="comment">/* ... */</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在 HTML 模版中，请使用 kebab-case 形式：</p>
